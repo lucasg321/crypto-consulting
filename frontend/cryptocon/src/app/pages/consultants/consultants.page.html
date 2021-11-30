@@ -1,0 +1,280 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+
+    <!--    <ion-buttons slot="start">-->
+    <!--      <ion-back-button></ion-back-button>-->
+    <!--    </ion-buttons>-->
+    <div class="d-flex ion-padding-top">
+      <ion-img routerLink="/home" [src]="'assets/logo.svg'" class="logo"></ion-img><ion-searchbar placeholder="Try &quot;Difi&quot; or &quot;Hot Wallet&quot; "></ion-searchbar>
+    </div>
+    <ion-title>
+
+    </ion-title>
+
+
+    <ion-buttons slot="end" class="ion-hide-sm-down">
+
+      <ion-tab-button tab="book">
+        <ion-icon name="add-circle"></ion-icon>
+        <ion-label>Book Expert</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="consultants">
+        <ion-icon name="people-circle"></ion-icon>
+        <ion-label>View Consultants</ion-label>
+        <!--        <ion-badge>6</ion-badge>-->
+      </ion-tab-button>
+      <ion-tab-button tab="schedule-time">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Schedule</ion-label>
+        <ion-badge>2</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button tab="user-profile">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Profile</ion-label>
+        <!--        <ion-badge></ion-badge>-->
+      </ion-tab-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="ion-hide-sm-up">
+
+      <ion-menu-button menu="main-menu" color="light"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid>
+    <ion-row class="ion-justify-content-between">
+      <ion-card class="top-card border-radius-50" color="tertiary" >
+        <ion-card-content class="p-2">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="auto">
+              <ion-img [src]="'assets/icon/man.png'" style="width: 60px; max-width: 100%" class=""></ion-img>
+            </ion-col>
+            <ion-col>
+            <ion-text class="">
+              <h2 class="fw-bold">Get help from a Crypto Expert</h2>
+              <ion-button class="ion-no-padding ion-no-margin" style="height: auto" color="light" fill="clear">
+                <ion-label>Learn more</ion-label>
+                <ion-icon name="arrow-forward"></ion-icon>
+              </ion-button>
+            </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="top-card border-radius-50 ion-hide-lg-down" color="warning" >
+
+        <ion-card-content class="p-2">
+
+          <ion-row class="ion-align-items-center">
+            <ion-col size="auto">
+              <ion-img [src]="'assets/icon/man.png'" style="width: 60px; max-width: 100%" class=""></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-text class="">
+
+                <h2 class="fw-bold">Get help from a Crypto Expert</h2>
+                <ion-button class="ion-no-padding ion-no-margin" style="height: auto" color="dark" fill="clear">
+                  <ion-label>Learn more</ion-label>
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </ion-button>
+
+              </ion-text>
+            </ion-col>
+            <!--            <ion-col size="2" >-->
+            <!--              <ion-button color="light" fill="outline" size="small" expand="block">Profile</ion-button>-->
+            <!--              <ion-button color="light" fill="outline" size="small" expand="block">Book</ion-button>-->
+            <!--            </ion-col>-->
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="top-card border-radius-50 ion-hide-sm-down" color="dark" >
+
+        <ion-card-content class="p-2">
+
+          <ion-row class="ion-align-items-center">
+            <ion-col size="auto">
+              <ion-img [src]="'assets/icon/man.png'" style="width: 60px; max-width: 100%" class=""></ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-text class="">
+
+                <h2 class="fw-bold">Get help from a Crypto Expert</h2>
+                <ion-button class="ion-n-padding ion-no-margin" style="height: auto" color="light" fill="solid">
+                  <ion-label>Learn more</ion-label>
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </ion-button>
+
+              </ion-text>
+            </ion-col>
+            <!--            <ion-col size="2" >-->
+            <!--              <ion-button color="light" fill="outline" size="small" expand="block">Profile</ion-button>-->
+            <!--              <ion-button color="light" fill="outline" size="small" expand="block">Book</ion-button>-->
+            <!--            </ion-col>-->
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-between">
+      <ion-col size="3" class="ion-hide-sm-down">
+        <ion-list class="bg-white">
+          <ion-list-header>
+            <h1 class="ion-no-margin ion-margin-bottom"><strong>Help me with</strong></h1>
+          </ion-list-header>
+
+<!--          <ion-card class="question-card ion-no-margin ion-margin-bottom" color="light" routerLink="/book">-->
+<!--            <ion-card-content>-->
+<!--              <ion-text>-->
+<!--                <p><strong>Buy specific Crypto</strong> (Walk through)</p>-->
+<!--              </ion-text>-->
+<!--            </ion-card-content>-->
+<!--          </ion-card>-->
+          <ion-card class="top-card border-radius-50" color="light"  *ngFor="let category of categories">
+
+            <ion-card-content class="">
+
+              <ion-row class="ion-align-items-center ion-justify-content-between">
+                <ion-col size="auto">
+                  <ion-img [src]="category.image_url" style="width: 45px; max-width: 100%" class=""></ion-img>
+                </ion-col>
+                <ion-col>
+                  <ion-text class="">
+
+                    <p class="fw-bold">{{category.name}}</p>
+
+                  </ion-text>
+                </ion-col>
+                <!--            <ion-col size="2" >-->
+                <!--              <ion-button color="light" fill="outline" size="small" expand="block">Profile</ion-button>-->
+                <!--              <ion-button color="light" fill="outline" size="small" expand="block">Book</ion-button>-->
+                <!--            </ion-col>-->
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+
+        </ion-list>
+
+      </ion-col>
+      <ion-col size="12" size-md="8">
+        <ion-list>
+          <ion-list-header>
+            <h1><strong>Meet Our Experts</strong></h1>
+          </ion-list-header>
+          <ion-list-header>
+            <h5>Available Now</h5>
+          </ion-list-header>
+            <ion-list >
+
+              <ion-card *ngFor="let consultant of consultants" class="ion-pading ion-no-margin" color="dark"  >
+
+                <ion-card-content>
+
+                  <ion-row class="ion-justify-content-end">
+                    <ion-col size="auto">
+                      <ion-img [src]="consultant.image_url" style="width: 90px; max-width: 100%"></ion-img>
+
+                    </ion-col>
+                    <ion-col class="ion-padding-start">
+                      <ion-text>
+                        <h2><strong>{{ consultant.first_name }} {{ consultant.last_name }}</strong></h2>
+                        <ion-badge *ngFor="let tag of consultant.tags.split(',')" color="light"
+                                   class="badge">{{ tag }}</ion-badge>
+                        <p>{{ consultant.description }}</p>
+                      </ion-text>
+                    </ion-col>
+                    <ion-col size="5" sizeSm="3" class="d-flex ion-justify-content-end">
+<!--                        <p><strong>Next Availability: time, date</strong></p>-->
+                        <ion-button color="light" fill="solid" size="small"  (click)="openModalProfile(consultant)" ><ion-icon name="person-circle"></ion-icon> <ion-label></ion-label> </ion-button>
+                        <!-- Calendly link widget begin -->
+                        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
+                                async></script>
+<!--                        <ion-button color="light" fill="solid" size="small"  id="{{ consultant.calendly_id }}" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/'+this.id});-->
+<!--              return false;">Book-->
+<!--                        </ion-button>-->
+<!--                        &lt;!&ndash; Calendly link widget end &ndash;&gt;-->
+                      <ion-button color="light" fill="solid" size="small"   (click)="openModalBook()">Book
+                        </ion-button>
+
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+
+            </ion-list>
+<!--          <ion-card class="ion-pading ion-no-margin" color="dark" routerLink="/book">-->
+<!--            <ion-card-content>-->
+
+<!--            <ion-row>-->
+
+<!--              <ion-col size="auto">-->
+<!--                <ion-img [src]="'assets/icon/man.png'" style="width: 90px; max-width: 100%" class=""></ion-img>-->
+
+<!--              </ion-col>-->
+<!--              <ion-col class="ion-padding-horizontal">-->
+<!--                <ion-text>-->
+<!--                  <h2><strong>Brandon Oaks</strong></h2>-->
+<!--                  <ion-badge color="light" class="badge">Defi</ion-badge>-->
+<!--                  <ion-badge color="light" class="badge">Wallet</ion-badge>-->
+<!--                  <ion-badge color="light" class="badge ">Defi</ion-badge>-->
+<!--                  <p>That’s a classic issue, but don’t worry I can walk you through the process.-->
+<!--                    Let’s talk</p>-->
+<!--                  <p><strong>Next Availability: time, date</strong></p>-->
+<!--                </ion-text>-->
+<!--              </ion-col>-->
+<!--              <ion-col size="12" class="ion-justify-content-end">-->
+<!--                <ion-button (click)="openModalProfile()" color="light" fill="outline" size="small" >-->
+<!--                  Profile-->
+<!--                </ion-button>-->
+<!--                <ion-button (click)="openModalBook()" color="light" fill="outline" size="small" >Book-->
+<!--                </ion-button>-->
+<!--              </ion-col>-->
+<!--            </ion-row>-->
+<!--            </ion-card-content>-->
+<!--          </ion-card>-->
+        </ion-list>
+<!--        <ion-list>-->
+
+<!--          <ion-list-header>-->
+<!--            <h5>Available Later</h5>-->
+<!--          </ion-list-header>-->
+<!--          <ion-card *ngFor="let consultant of consultants" class="ion-pading ion-no-margin" color="dark"  >-->
+
+<!--            <ion-card-content>-->
+
+<!--              <ion-row class="ion-justify-content-end">-->
+<!--                <ion-col size="auto">-->
+<!--                  <ion-img [src]="consultant.image_url" style="width: 90px; max-width: 100%"></ion-img>-->
+
+<!--                </ion-col>-->
+<!--                <ion-col class="ion-padding-start">-->
+<!--                  <ion-text>-->
+<!--                    <h2><strong>{{ consultant.first_name }} {{ consultant.last_name }}</strong></h2>-->
+<!--                    <ion-badge *ngFor="let tag of consultant.tags.split(',')" color="light"-->
+<!--                               class="badge">{{ tag }}</ion-badge>-->
+<!--                    <p>{{ consultant.description }}</p>-->
+<!--                  </ion-text>-->
+<!--                </ion-col>-->
+<!--                <ion-col size="5" sizeSm="3" class="d-flex ion-justify-content-end">-->
+<!--                  &lt;!&ndash;                        <p><strong>Next Availability: time, date</strong></p>&ndash;&gt;-->
+<!--                  <ion-button color="light" fill="solid" size="small"  (click)="openModalProfile(consultant)" ><ion-icon name="person-circle"></ion-icon> <ion-label></ion-label> </ion-button>-->
+<!--                  &lt;!&ndash; Calendly link widget begin &ndash;&gt;-->
+<!--                  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">-->
+<!--                  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"-->
+<!--                          async></script>-->
+<!--                  <ion-button color="light" fill="solid" size="small"  id="{{ consultant.calendly_id }}" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/'+this.id});-->
+<!--              return false;">Book-->
+<!--                  </ion-button>-->
+<!--                  &lt;!&ndash; Calendly link widget end &ndash;&gt;-->
+
+<!--                </ion-col>-->
+<!--              </ion-row>-->
+<!--            </ion-card-content>-->
+<!--          </ion-card>-->
+<!--        </ion-list>-->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

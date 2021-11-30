@@ -1,0 +1,34 @@
+{% extends "admin/base_site.html" %}
+
+{%load i18n %}
+{% load static %}
+
+
+{% block content %}
+<form method="POST" action="{% url 'email' %}">{% csrf_token %}
+    <div style="  margin: auto; width: 20%;">
+    <h1>{% blocktrans %}Newsletter to Users{% endblocktrans %}</h1>
+        <div>
+            <p>{{ form.users.errors }}</p>
+            <h4>{{ form.users.label_tag }}</h4>
+            <p>
+                {% for user in form.users.initial %}
+                    {{ user.email }}{% if not forloop.last %},&nbsp;{% endif %}
+                {% endfor %}
+            </p>
+            <select name="users" multiple style="display: none">
+                {% for user in form.users.initial %}
+                    <option value="{{ user.id }}" selected>{{ user }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <p>{{ form.message.errors }}</p>
+            <h4>{{ form.message.label_tag }}</h4>
+            <p>{{ form.message }}</p>
+        </div>
+        <input type="submit" class="custom-sms-button" value="{% trans 'Send email' %}" />
+        <a class="custom-sms-back-btn button" href="{% url 'admin:accounts_customuser_changelist' %}">{% trans "No, take me back" %}</a>
+    </div>
+</form>
+{% endblock %}

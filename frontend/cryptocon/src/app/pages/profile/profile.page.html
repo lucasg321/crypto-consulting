@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-grid fixed>
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<a id="{{this._userService.userInfo['calendly_id']}}" *ngIf="this._userService.userInfo['calendly_id']" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/'+this.id});
+return false;">Schedule time with me</a>
+<!-- Calendly link widget end -->
+  </ion-grid>
+</ion-content>

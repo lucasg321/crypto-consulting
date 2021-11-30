@@ -1,0 +1,37 @@
+<ion-header >
+  <ion-toolbar color="light" class="ion-padding-horizontal">
+    <ion-title>What We Do</ion-title>
+
+    <ion-buttons slot="end" >
+    <ion-button (click)="closeModal()" color="dark"><ion-icon name="close"></ion-icon> </ion-button>
+
+
+  </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+  <swiper
+    [loop]="true"
+    [pagination]="true" style="height: 100%
+"
+  >
+    <ng-template swiperSlide>Slide 1</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+  </swiper>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        ID : {{modelId}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="closeModal()">Close Modal</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

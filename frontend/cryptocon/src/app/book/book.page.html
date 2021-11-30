@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!--    <ion-buttons slot="start">-->
+    <!--      <ion-back-button></ion-back-button>-->
+    <!--    </ion-buttons>-->
+    <ion-img routerLink="/home" [src]="'assets/logo.svg'" class="logo"></ion-img>
+    <ion-title>
+
+    </ion-title>
+
+
+    <ion-buttons slot="end" class="ion-hide-sm-down">
+
+      <ion-tab-button tab="schedule">
+        <ion-icon name="add-circle"></ion-icon>
+        <ion-label>Book Expert</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="consultants">
+        <ion-icon name="people-circle"></ion-icon>
+        <ion-label>View Consultants</ion-label>
+        <!--        <ion-badge>6</ion-badge>-->
+      </ion-tab-button>
+      <ion-tab-button tab="schedule-time">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Schedule</ion-label>
+        <ion-badge>2</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button tab="user-profile">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Profile</ion-label>
+        <!--        <ion-badge></ion-badge>-->
+      </ion-tab-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="ion-hide-sm-up">
+
+      <ion-menu-button menu="main-menu" color="light"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" sizeSm="8" sizeMd="6">
+        <ion-list>
+          <ion-list-header>
+            <h1 class="ion-no-margin ion-margin-bottom"><strong>Help me with</strong></h1>
+          </ion-list-header>
+
+          <ion-card *ngFor="let question of questions" class="question-card ion-no-margin ion-margin-bottom" color="light" routerLink="/book/{{question.pk}}">
+            <ion-card-content>
+              <ion-text>
+                <p><strong>{{question.question}}</strong> ({{question.subtitle}})</p>
+              </ion-text>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card color="dark" routerLink="/consultants">
+            <ion-card-content>
+              <ion-button class="ion-no-padding ion-no-margin" style="height: auto" color="light" fill="clear" expand="block" >
+                <ion-label>Skip step, book consultant now </ion-label>
+                <ion-icon name="arrow-forward"></ion-icon>
+              </ion-button>
+              <ion-text>
+                <p><strong></strong>
+                </p>
+              </ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,28 @@
+@media (min-width: 800px) {
+  .ssoLogos {
+    width: 20%;
+  }
+}
+
+@media (max-width: 800px) {
+  .ssoLogos {
+    width: 75%;
+  }
+}
+
+.btn-smaller {
+  width: 60%;
+  height: 100%;
+}
+
+@media (min-width: 800px) {
+  .side-btn {
+    width: 20%;
+  }
+}
+
+@media (max-width: 800px) {
+  .side-btn {
+    width: 40%;
+  }
+}

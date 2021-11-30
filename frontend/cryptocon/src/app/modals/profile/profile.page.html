@@ -1,0 +1,48 @@
+
+<ion-header>
+  <ion-toolbar color="light" class="ion-padding">
+<!--        <ion-title>payment</ion-title>-->
+    <ion-row>
+
+      <ion-col size="auto">
+        <ion-img [src]="'assets/icon/man.png'" style="width: 55px; max-width: 100%" class=""></ion-img>
+
+      </ion-col>
+      <ion-col class="ion-padding-horizontal">
+        <ion-text>
+          <h4 class="ion-no-margin"><strong>{{consultant.first_name}} {{consultant.last_name}}</strong></h4>
+          <h5 class="ion-no-margin">Expertise Level <strong>{{consultant.expertise}}</strong></h5>
+        </ion-text>
+      </ion-col>
+
+    </ion-row>
+    <ion-buttons slot="end" >
+      <ion-button (click)="closeModal()" color="dark"><ion-icon name="close"></ion-icon> </ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" class="ion-padding-horizontal d-flex">
+  <ion-row class="flex-column ion-justify-content-between"   >
+    <h4>Description</h4>
+    <ion-text>
+      <p>{{ consultant.description}}</p>
+    </ion-text>
+    <ion-text  class="d-flex ion-justify-content-end">
+      <ion-badge *ngFor="let tag of consultant.tags.split(',')" color="dark"
+                 class="badge p-2">{{ tag }}</ion-badge>
+    </ion-text>
+
+  </ion-row>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="ion-padding ion-no-padding-top" color="light">
+  <ion-button expand="block" color="dark" fill="solid" size="default" >
+    Book Share Screen Consultation Now <ion-icon name="add-circle-sharp" class="ion-margin-start"></ion-icon></ion-button>
+  <ion-button expand="block" color="tertiary" fill="solid" size="default" >
+    Exclusive Online Courses <ion-icon name="school-sharp" class="ion-margin-start"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-footer>

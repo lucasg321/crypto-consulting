@@ -150,8 +150,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'verify982@gmail.com'
-EMAIL_HOST_PASSWORD = 'wrodssap'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 GCP_HOST = '/cloudsql/' + access_secret_version(PROJECT_ID, 'DB_CONNECTION_STRING')
 LOCAL_HOST = ('/cloudsql/' + os.environ.get('LOCAL_HOST_OVERRIDE')) if os.environ.get(

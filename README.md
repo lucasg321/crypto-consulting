@@ -19,7 +19,7 @@ Software Requirements document pre-development: https://docs.google.com/document
 
 Architecure Thoughts:
 
-Use GCP app Engine, container and SQL for now. When scaling there are a few things to think about. If we have core regions that seem to use the app we can use a load balancer to direct traffic to a US and Europe version. Or even have multiple witihn a continent like East and West, etc. Can create read copies of the DB. Writing only occurs when booking a meeting or creating a user profile, therefore reading will be much more common. Multiple read copies of the DB will enable faster reading from the DBs especially if cognizant of location. 
+Use GCP app Engine, container and SQL for now. When scaling there are a few things to think about. If we have core regions that seem to use the app we can use a load balancer to direct traffic to a US and Europe version. Or even have multiple DBs within a continent like East and West, etc. Can create read copies of the DB. Writing only occurs when booking a meeting or creating a user profile, therefore reading will be much more common. Multiple read copies of the DB will enable faster reading from the DBs especially if we are cognizant of location. 
 
 ### Pictures: 
 
